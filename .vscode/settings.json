@@ -1,0 +1,9 @@
+{
+  "typescript.format.enable": false,
+  "editor.formatOnSave": true,
+  "prettier.trailingComma": "all",
+  "prettier.singleQuote": true,
+  "typescriptHero.resolver.organizeOnSave": false,
+  "typescriptHero.resolver.disableImportsSorting": true,
+  "editor.tabSize": 2
+}
