@@ -1,10 +1,13 @@
-import { register } from './register';
-import { login } from './login';
+import { me } from './queries';
+import { register, login, updateMe } from './mutation';
 
 export const userResolvers = {
-  Query: {},
+  Query: {
+    me,
+  },
   Mutation: {
     register,
     login,
+    updateMe,
   },
 };

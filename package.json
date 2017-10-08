@@ -7,6 +7,9 @@
   "author": "Le Dinh Nhat Khanh <lednhatkhanh@gmail.com>",
   "license": "MIT",
   "private": false,
+  "engines": {
+    "node": "8.x"
+  },
   "scripts": {
     "clean": "rimraf build",
     "build": "tsc",

@@ -20,7 +20,9 @@ export class UserSubscriber implements EntitySubscriberInterface<User> {
     const result = await event.databaseEntity.comparePassword(
       event.entity.password,
     );
-    // tslint:disable-next-line:no-console
-    console.log(result);
+    if (!result) {
+      await event.entity.hashPassword();
+      event.entity.versionKey += 1;
+    }
   }
 }

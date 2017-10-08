@@ -1,6 +1,6 @@
-import { config } from '../../../config';
-import { IContextModel } from '../../../context.model';
+import { config } from '../../../../config';
 import { sign } from 'jsonwebtoken';
+import { IContextModel } from '../../../../context.model';
 
 interface ILoginModel {
   email: string;
@@ -39,7 +39,7 @@ export const login = async (
     };
 
     const token = await sign(payload, config.authKeys.jwtKey, {
-      expiresIn: '5s',
+      expiresIn: '20m',
     });
     const refreshToken = await sign(payload, config.authKeys.jwtRefreshKey, {
       expiresIn: '7d',

@@ -6,12 +6,8 @@ import { makeExecutableSchema } from 'graphql-tools';
 
 const typeDefs = [userType, globalTypes];
 const resolvers: IResolvers = {
-  Query: {
-    ...userResolvers.Query,
-  },
-  Mutation: {
-    ...userResolvers.Mutation,
-  },
+  Query: { ...userResolvers.Query },
+  Mutation: { ...userResolvers.Mutation },
 };
 
 export const schema = makeExecutableSchema({

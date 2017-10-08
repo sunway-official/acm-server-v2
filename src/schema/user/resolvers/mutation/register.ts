@@ -1,6 +1,6 @@
+import { IContextModel } from '../../../../context.model';
 import { validate } from 'class-validator';
-import { User } from '../../../database/entities/user';
-import { IContextModel } from '../../../context.model';
+import { User } from '../../../../database/entities/user';
 
 interface IRegisterModel {
   firstName: string;

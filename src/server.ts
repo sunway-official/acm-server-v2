@@ -62,9 +62,6 @@ export const start = async () => {
       if (error.name === 'TokenExpiredError') {
         const refreshToken = req.get('RefreshToken');
 
-        // tslint:disable-next-line:no-console
-        console.log(refreshToken);
-
         if (!refreshToken) {
           return next();
         }
