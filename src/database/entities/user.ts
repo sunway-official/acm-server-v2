@@ -9,11 +9,11 @@ import {
 import {
   IsDateString,
   IsEmail,
-  IsLowercase,
+  IsIn,
   IsNotEmpty,
   IsOptional,
+  IsString,
   IsUrl,
-  Length,
   Matches,
   MaxLength,
 } from 'class-validator';
@@ -24,18 +24,19 @@ export class User {
 
   @Column()
   @MaxLength(100)
+  @IsString()
   @IsNotEmpty()
   public firstName: string;
 
   @Column()
   @MaxLength(100)
+  @IsString()
   @IsNotEmpty()
   public lastName: string;
 
-  @IsEmail()
-  @Length(5, 100)
-  @IsLowercase()
   @IsNotEmpty()
+  @IsEmail()
+  @MaxLength(100)
   @Column({ unique: true })
   public email: string;
 
@@ -48,6 +49,7 @@ export class User {
     default: 'unknown',
   })
   @IsNotEmpty()
+  @IsIn(['male', 'female', 'unknown'])
   public gender: string;
 
   @Column({

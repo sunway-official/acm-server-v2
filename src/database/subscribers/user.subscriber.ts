@@ -14,6 +14,7 @@ export class UserSubscriber implements EntitySubscriberInterface<User> {
       event.entity.gender = 'unknown';
     }
 
+    event.entity.email = event.entity.email.toLowerCase();
     await event.entity.hashPassword();
   }
   public async beforeUpdate(event: UpdateEvent<User>) {
